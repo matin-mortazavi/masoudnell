@@ -1,26 +1,17 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.mask-wrapper {
+  mask-image: url("/images/big-hero-text.svg");
+  mask-repeat: no-repeat;
+}
+
+.mask-wrapper-2 {
+  mask-image: url("/images/text-logo.png");
+  mask-repeat: no-repeat;
 }
