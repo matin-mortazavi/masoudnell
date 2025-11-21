@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMaskSettings } from "@/hooks/use-responsive";
 import { ScrollTrigger } from "gsap/all";
+import ComingSoon from "./coming-soon";
 // import ComingSoon from "./coming-soon";
-gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const { initialMaskPos, initialMaskSize, maskPos, maskSize } =
     useMaskSettings();
@@ -33,20 +33,24 @@ const Hero = () => {
       },
     });
 
-    tl.to(".fade-out", { opacity: 0, ease: "power1.inOut" })
-      .to(".scale-out", { scale: 1, ease: "power1.inOut" })
-      .to(".mask-wrapper-2", { maskSize, ease: "power1.inOut" }, "<")
-      .to(".mask-wrapper-2", { opacity: 0 })
+    tl.to(".fade-out", { opacity: 0, ease: "power1.inOut" }, "<")
+      .to(".scale-out", { scale: 1, ease: "power1.inOut" }, "<")
       .to(
-        ".overlay-logo",
-        {
-          opacity: 1,
-          onComplete: () => {
-            gsap.to(".overlay-logo", { opacity: 0 });
-          },
-        },
+        ".mask-wrapper-2",
+        { maskSize, maskPosition: "50% 19.5%", ease: "power1.inOut" },
         "<"
       )
+      .to(".mask-wrapper-2", { opacity: 0 })
+      // .to(
+      //   ".overlay-logo",
+      //   {
+      //     opacity: 1,
+      //     onComplete: () => {
+      //       gsap.to(".overlay-logo", { opacity: 0 });
+      //     },
+      //   },
+      //   "<"
+      // )
       .to(
         ".gradient-title",
         {
@@ -73,16 +77,14 @@ const Hero = () => {
   return (
     <section className="hero-section w-dvw h-dvh relative overflow-hidden">
       <div className="w-full h-full mask-wrapper-2">
-        <img
-          src="/images/hero-bg.webp"
-          alt="background"
-          className="scale-out object-cover md:scale-125 w-full h-full "
-        />
-        <img
-          src="/images/hero-text.webp"
-          alt="hero-logo"
-          className="title-logo absolute h-full md:scale-125 top-0 object-cover fade-out"
-        />
+        <div className="w-full h-full bg-[#0e1216] flex justify-center">
+          <img
+            src="/images/bg.jpeg"
+            alt="background"
+            className="scale-out object-cover w-full h-full   md:scale-125   "
+          />
+        </div>
+       
         <img
           src="/images/watch-trailer.png"
           alt="trailer"
@@ -101,13 +103,13 @@ const Hero = () => {
         />
       </div>
 
-      <div className="fake-logo-wrapper absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-41.5 3xl:top-44 left-1/2 -translate-x-1/2">
+      <div className="fake-logo-wrapper absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-41.5 3xl:top-40 left-1/2 -translate-x-1/2">
         <img
           src="/images/text-logo.png"
-          className="overlay-logo size-full object-cover opacity-0 w-70 md:w-60 2xl:w-72 3xl:w-80"
+          className="overlay-logo w-68 h-34  opacity-0 "
         />
       </div>
-      {/* <ComingSoon /> */}
+      <ComingSoon />
     </section>
   );
 };
