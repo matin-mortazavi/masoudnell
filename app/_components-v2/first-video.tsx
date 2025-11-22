@@ -20,11 +20,21 @@ const FirstVideo = () => {
       },
     });
 
-    tl.to(".hero-section", { delay: 0.5, opacity: 0, ease: "power1.inOut" });
+    tl.to(".hero-section", {
+      delay: 0.5,
+      opacity: 0,
+      ease: "power1.inOut",
+      onStart: () => {
+        console.log("onComplete 2");
+      },
+    });
     tl.to(".first-vd-wrapper", {
       opacity: 1,
       duration: 2,
       ease: "power1.inOut",
+      onStart: () => {
+        console.log("onComplete 3");
+      },
     });
 
     const addVideoAnimation = () => {
@@ -61,7 +71,7 @@ const FirstVideo = () => {
           muted
           playsInline
           preload="auto"
-          src="/videos/first-vid.mp4"
+          src="/videos/first-vid.MP4"
           className="first-vd h-full w-full object-cover md:[object-position:50%_center] [object-position:75%_center]"
         />
       </div>

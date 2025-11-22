@@ -6,15 +6,18 @@ import Masoud from "./_components-v2/masoud";
 import FloatingLines from "@/components/FloatingLines";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { LogoProvider } from "./_components-v2/logo-context";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
 
   return (
     <section>
-      <Hero />
-      <FirstVideo />
-      <Masoud />
+      <LogoProvider>
+        <Hero />
+        <FirstVideo />
+        <Masoud />
+      </LogoProvider>
     </section>
   );
 }

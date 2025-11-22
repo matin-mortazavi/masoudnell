@@ -4,10 +4,12 @@ import { useGSAP } from "@gsap/react";
 import { useMaskSettings } from "@/hooks/use-responsive";
 import { ScrollTrigger } from "gsap/all";
 import ComingSoon from "./coming-soon";
+import { useLogoContext } from "../_components-v2/logo-context";
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const { initialMaskPos, initialMaskSize, maskPos, maskSize } =
     useMaskSettings();
+  const { logoInNav, setLogoInNav } = useLogoContext();
 
   useGSAP(() => {
     gsap.set(".mask-wrapper", {
@@ -79,7 +81,7 @@ const Hero = () => {
           className="scale-out object-cover md:scale-125 w-full h-full "
         />
         <img
-          src="/images/hero-text.webp"
+          src="/images/text-logo.png"
           alt="hero-logo"
           className="title-logo absolute h-full md:scale-125 top-0 object-cover fade-out"
         />

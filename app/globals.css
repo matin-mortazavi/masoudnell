@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Enable View Transitions */
+@view-transition {
+  navigation: auto;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -128,6 +133,13 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* View Transition Styles */
+::view-transition-old(logo-transition),
+::view-transition-new(logo-transition) {
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -135,4 +147,24 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.navbar {
+  /* This name MUST be the same in hero + navbar */
+  view-transition-name: navbar;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional: customize the motion a bit */
+::view-transition-group(navbar) {
+  animation-duration: 0.35s;
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(navbar),
+::view-transition-new(navbar) {
+  /* You can tweak opacity, etc. */
 }
