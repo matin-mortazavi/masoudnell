@@ -1,5 +1,4 @@
 "use client";
-
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -20,6 +19,8 @@ const Masoud = () => {
 
     gsap.to(
       ".jason .img-box",
+      //@ts-expect-error
+
       {
         scrollTrigger: {
           trigger: ".jason",

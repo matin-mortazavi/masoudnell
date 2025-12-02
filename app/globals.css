@@ -168,3 +168,46 @@ body {
 ::view-transition-new(navbar) {
   /* You can tweak opacity, etc. */
 }
+
+/* Smooth cross-fade for root */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+}
+
+/* Layout toggle transition */
+::view-transition-group(tutorials-layout) {
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(tutorials-layout) {
+  animation: layout-fade-out 0.15s ease-out forwards;
+}
+
+::view-transition-new(tutorials-layout) {
+  animation: layout-fade-in 0.15s ease-in 0.15s forwards;
+}
+
+@keyframes layout-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes layout-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

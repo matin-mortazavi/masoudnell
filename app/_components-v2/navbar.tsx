@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useLogoContext } from "./logo-context";
 
 const Navbar = () => {
@@ -15,11 +16,13 @@ const Navbar = () => {
           {/* Logo Section - Left */}
           <div className="shrink-0 w-58">
             {logoInNav && (
-              <img
-                src="/images/nell.png"
-                alt="logo"
-                className="w-36 navbar md:w-32 h-auto transition-all duration-300"
-              />
+              <Link href="/">
+                <img
+                  src="/images/nell.png"
+                  alt="logo"
+                  className="w-36 navbar md:w-32 h-auto transition-all duration-300"
+                />
+              </Link>
             )}
           </div>
 
@@ -37,6 +40,12 @@ const Navbar = () => {
             >
               Services
             </a>
+            <Link
+              href="/tutorials"
+              className="text-white hover:text-orange-400 transition-colors duration-200 text-sm md:text-base font-medium"
+            >
+              Tutorials
+            </Link>
             <a
               href="#contact"
               className="text-white hover:text-orange-400 transition-colors duration-200 text-sm md:text-base font-medium"

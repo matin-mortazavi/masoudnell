@@ -26,10 +26,14 @@ const FirstVideo = () => {
       ease: "power1.inOut",
     });
 
+//@ts-expect-error
+
     videoRef.current.onloadedmetadata = () => {
       tl.to(
         videoRef.current,
         {
+//@ts-expect-error
+
           currentTime: videoRef.current.duration,
           duration: 3,
           ease: "power1.inOut",

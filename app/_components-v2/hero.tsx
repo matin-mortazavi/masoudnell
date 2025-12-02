@@ -162,7 +162,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="fake-logo-wrapper absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-39 3xl:top-40 left-1/2 -translate-x-1/2">
+        <div className="fake-logo-wrapper absolute  z-40 top-[124px] 2xl:top-[156px] 3xl:top-[160px] left-1/2 -translate-x-1/2">
           <img
             src="/images/text-logo.png"
             className="overlay-logo w-full h-full w-68   opacity-0 object-cover opacity-0 w-60 md:w-60 2xl:w-72 3xl:w-80 "

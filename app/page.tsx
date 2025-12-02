@@ -3,7 +3,6 @@ import Image from "next/image";
 import Hero from "./_components-v2/hero";
 import FirstVideo from "./_components-v2/first-video";
 import Masoud from "./_components-v2/masoud";
-import FloatingLines from "@/components/FloatingLines";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { LogoProvider } from "./_components-v2/logo-context";

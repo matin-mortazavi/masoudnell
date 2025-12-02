@@ -17,8 +17,6 @@ const Hero = () => {
       maskSize: initialMaskSize,
     });
 
-    gsap.set(".mask-logo", { marginTop: "-100vh", opacity: 0 });
-
     gsap.set(".entrance-message", {
       marginTop: "0vh",
       maskImage:
@@ -93,14 +91,6 @@ const Hero = () => {
         <div className="play-img fade-out">
           <img src="/images/play.png" alt="play" className="w-7 ml-1" />
         </div>
-      </div>
-
-      <div>
-        <img
-          src="/images/big-hero-text.svg"
-          alt="logo"
-          className="w-full h-full object-cover mask-logo"
-        />
       </div>
 
       <div className="fake-logo-wrapper absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-41.5 3xl:top-44 left-1/2 -translate-x-1/2">
