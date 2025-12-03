@@ -58,11 +58,10 @@ export default async function ProductsPage() {
             برگشت به خانه
           </Link>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">
-            محصولات پارکور
+            محصولات 
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl">
-            لباس و کفش‌های مخصوص پارکور با کیفیت بالا. برای سفارش از طریق تلگرام
-            پیام دهید.
+          <p className="text-lg text-gray-400 max-w-2xl mt-4">
+            لباس و کفش‌های مخصوص پارکور با کیفیت بالا.{" "}
           </p>
 
           {/* Order Info Banner */}

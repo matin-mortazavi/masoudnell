@@ -13,7 +13,7 @@ import {
 import ProductImageGallery from "./_components/product-image-gallery";
 
 function formatPrice(price: number): string {
-  return new Intl.NumberFormat("fa-IR").format(price) + " تومان";
+  return new Intl.NumberFormat("fa-IR").format(price);
 }
 
 function getDiscountedPrice(price: number, discount: number): number {
@@ -124,21 +124,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </ViewTransition>
 
               {/* Price */}
-              <div className="mb-8">
+              <div className="mb-8 rtl">
                 {hasDiscount && (
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xl text-gray-500 line-through">
-                      {formatPrice(product.price)}
+                       {formatPrice(product.price)}
                     </span>
-                    <span className="px-2 py-1 rounded-full text-sm font-bold bg-red-500 text-white flex items-center gap-1">
-                      <Percent className="w-3 h-3" />
+                    <span className="px-2 py-1 rounded-full text-sm font-bold bg-green-100 text-green-500 flex items-center gap-1">
                       {product.discount_percentage}% تخفیف
                     </span>
                   </div>
                 )}
-                <span className="text-3xl font-bold text-orange-400">
-                  {formatPrice(finalPrice)}
-                </span>
+                <div className="flex gap-1 text-3xl font-bold text-orange-400">
+                  <span>تومان</span>
+                  <span className="text-3xl font-bold text-orange-400">
+                    {formatPrice(finalPrice)}
+                  </span>
+                </div>
               </div>
 
               {/* Sizes */}
