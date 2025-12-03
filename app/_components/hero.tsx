@@ -4,18 +4,18 @@ import { useGSAP } from "@gsap/react";
 import { useMaskSettings } from "@/hooks/use-responsive";
 import { ScrollTrigger } from "gsap/all";
 import ComingSoon from "./coming-soon";
+import { useLogoContext } from "../_components-v2/logo-context";
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const { initialMaskPos, initialMaskSize, maskPos, maskSize } =
     useMaskSettings();
+  const { logoInNav, setLogoInNav } = useLogoContext();
 
   useGSAP(() => {
     gsap.set(".mask-wrapper", {
       maskPosition: initialMaskPos,
       maskSize: initialMaskSize,
     });
-
-    gsap.set(".mask-logo", { marginTop: "-100vh", opacity: 0 });
 
     gsap.set(".entrance-message", {
       marginTop: "0vh",
@@ -79,7 +79,7 @@ const Hero = () => {
           className="scale-out object-cover md:scale-125 w-full h-full "
         />
         <img
-          src="/images/hero-text.webp"
+          src="/images/text-logo.png"
           alt="hero-logo"
           className="title-logo absolute h-full md:scale-125 top-0 object-cover fade-out"
         />
@@ -91,14 +91,6 @@ const Hero = () => {
         <div className="play-img fade-out">
           <img src="/images/play.png" alt="play" className="w-7 ml-1" />
         </div>
-      </div>
-
-      <div>
-        <img
-          src="/images/big-hero-text.svg"
-          alt="logo"
-          className="w-full h-full object-cover mask-logo"
-        />
       </div>
 
       <div className="fake-logo-wrapper absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-41.5 3xl:top-44 left-1/2 -translate-x-1/2">

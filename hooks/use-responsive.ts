@@ -41,10 +41,10 @@ export const useMaskSettings = () => {
 
   if (isMobile) {
     return {
-      initialMaskPos: "50% -1600vh",
-      initialMaskSize: "3100% 3100%",
-      maskPos: "50% 7vh",
-      maskSize: "50% 50%",
+      initialMaskPos: "50% 22%",
+      initialMaskSize: "5000% 5000%",
+      maskPos: "50% 25%",
+      maskSize: "187px 109px",
     };
   }
 
@@ -59,8 +59,8 @@ export const useMaskSettings = () => {
 
   return {
     initialMaskPos: "50% 22%",
-    initialMaskSize: "14600% 14650%",
+    initialMaskSize: "5000% 5000%",
     maskPos: "50% 25%",
-    maskSize: "20% 20%",
+    maskSize: "14% 14%",
   };
 };
